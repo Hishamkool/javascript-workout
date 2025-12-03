@@ -8,7 +8,7 @@
 3.size
 
 */
-const debug = false;
+const debug = true;
 
 const orders = ["pasta", "burger", "pasta", "pasta"];
 let orderSet = new Set(orders);
@@ -19,16 +19,38 @@ STRING IS ALSO AN ITERABLE
 // const stringSet = new Set(sampleString);
 // debug && console.log("string set ", stringSet); // duplicate h is removed
 */
+console.log(`\n------------------------`);
+console.log("old es6 2015 methods");
+console.log(`
+| Method / Property | Meaning                                          |
+| ----------------- | ------------------------------------------------ |
+| add(value)        | Adds a value to the set                          |
+| delete(value)     | Removes a value from the set                     |
+| has(value)        | Checks if a value exists in the set              |
+| clear()           | Removes all elements from the set                |
+| size              | Returns the number of items in the set           |
+| forEach(callback) | Iterates through each element                    |
+| keys()            | Returns iterator of values (same as values)      |
+| values()          | Returns iterator of values                       |
+| entries()         | Returns [value, value] pairs                     |
+| [Symbol.iterator] | Allows the set to be used in loops like for...of |
 
+`);
 // working with sets
+console.log(`\n------------size method------------`);
+
 debug &&
   console.log("How many types of items should be prepared", orderSet.size);
 debug && console.log("They are ", orderSet); // order 9s irrelevant
 
 // CHECHING IF ORDER HAS PIZZA
+console.log(`\n------------has method------------`);
+
 debug && console.log("Does order have pizza init:", orderSet.has("pizza"));
 debug && console.log("Does order have Pasta init:", orderSet.has("Pasta")); // case sensitive
 debug && console.log("Does order have pasta init:", orderSet.has("pasta")); // case sensitive
+
+console.log(`\n------------add method------------`);
 
 orderSet.add("pizza", "donut", "shawarma", "shawarma"); // [CANNOT TAKE IN MUTIPLE VALUES] only first value
 
@@ -46,7 +68,10 @@ orders.push("shawarma");
 orders.push("shawarma");
 orderSet = new Set(orders); // refreshing the set
 debug && console.log("new order set", orderSet);
+
 // [DELETING] items from the set
+console.log(`\n------------delete method------------`);
+
 orderSet.delete("shawarma");
 debug && console.log("order set modified", orderSet); //deleted shawarma
 
@@ -58,6 +83,8 @@ for (const order of orders) {
 debug && console.log("Orders for shef:", ordersForShef);
 
 // [TO DELETE ALL ELEMENST]
+console.log(`\n------------clear method- to delete all------------`);
+
 // orderSet.clear(); // deletes all items
 
 //[NOTE] we can NOT use sets to access elements like orderSet[0] // it will be undefined
@@ -83,6 +110,10 @@ const uniqueStafs = new Set(stafs);
 debug && console.log("stafs set", uniqueStafs);
 
 // CONVERTING SETS TO ARRAY TO ACCESS ITEMS
+console.log(
+  `\n------------CONVERTING SETS TO ARRAY TO ACCESS ITEMS using spread [...]------------`
+);
+
 const uniqueStafsArray = [...uniqueStafs];
 debug && console.log({ uniqueStafsArray });
 debug && console.log("accessing items: ", uniqueStafsArray[3]);
@@ -112,6 +143,20 @@ const mexicanFoods = new Set([
   "Pizza", // common
   "Churros",
 ]);
+
+console.log(`\n------------------------`);
+console.log("New es2024 methods");
+console.log(`
+| Method                        | Meaning                           |
+| ----------------------------- | --------------------------------- |
+| union(otherSet)               | Combine both sets (no duplicates) |
+| intersection(otherSet)        | Elements common in both           |
+| difference(otherSet)          | Items in A but not in B           |
+| symmetricDifference(otherSet) | Items in A or B but not both  |
+| isSubsetOf(otherSet)          | True if A is completely inside B  |
+| isSupersetOf(otherSet)        | True if A contains *all* of B     |
+| isDisjointFrom(otherSet)      | True if sets share *no* elements  |
+`);
 
 // [COMBINING TWO SETS] - UNION
 console.log("\n------------[COMBINING TWO SETS] - UNION------------");
@@ -177,3 +222,5 @@ console.log(
 
 const isUnique = italianFoods.isDisjointFrom(mexicanFoods);
 console.log("Are the sets unique? ", isUnique);
+
+console.log(`\n------------------------`);
