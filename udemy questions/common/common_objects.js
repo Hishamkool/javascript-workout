@@ -13,7 +13,7 @@ const openingHours = {
   },
 };
 
-export const restuarant = {
+export const restaurant = {
   name: "Hotel Arafa",
   location: "Kakkavayal",
   categories: ["Indian", " Italian", "Chinese", "Vegitarian"],
