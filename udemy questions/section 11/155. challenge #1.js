@@ -42,6 +42,7 @@ const checkDogs = function (dogsJulia, dogsKate) {
   console.log({ allDogs });
 
   checkAdult(allDogs);
+  return allDogs;
 };
 
 let dogsJulia = [3, 5, 2, 12, 7];
