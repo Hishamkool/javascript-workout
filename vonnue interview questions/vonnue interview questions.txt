@@ -1,0 +1,457 @@
+Sample Question
+[0 marks]
+
+You're building a developer tool that includes a number theory utility for developers working with cryptography and optimization algorithms. One core utility is to determine whether a given number is a prime number.
+
+A prime number is a number greater than 1 that is divisible only by 1 and itself.
+
+Your task is to: Determine whether the given number is a prime number.
+
+Input: - A single integer n (1 ≤ n ≤ 10⁹)
+
+Output: - return: - True if the number is a prime. - False otherwise.
+
+Example:
+Input: 7 Output: True
+
+Function Signatures:
+Python
+def is_prime(n: int) -> bool:
+    # Your implementation here
+    pass
+
+Java
+public class PrimeChecker {
+    public static boolean isPrime(int n) {
+        // Your implementation here
+        return false;
+    }
+}
+
+Javascript
+function isPrime(n) {
+    // Your implementation here
+    return false;
+}
+
+Example Implementation:
+import math
+
+# Define a list of test cases (input, expected output)
+test_cases = [
+    (7, "Prime"),
+    (10, "Not Prime"),
+    (1, "Not Prime"),
+    (2, "Prime"),
+    (99991, "Prime"),
+    (100000, "Not Prime"),
+    (17, "Prime"),
+    (25, "Not Prime"),
+    (7919, "Prime"),
+    (0, "Not Prime"),
+]
+
+# Function to run all test cases
+def run_tests():
+    for idx, (input_value, expected_output) in enumerate(test_cases):
+        result = is_prime(input_value)   # Run the candidate's function
+        # Validate the result
+        if result == expected_output:
+            print(f"Test case {idx + 1} passed - input({input_value}) => {result}")
+        else:
+            print(f"Test case {idx + 1} failed - input({input_value}) => expected({expected_output}), got({result})")
+
+# Run the tests
+run_tests()
+
+--------------------------------------------------------------------
+
+Question 1
+[2 marks]
+
+You're working on a text editor for software developers, and one of your features is to help them automatically validate code structure as they type. Developers often write code using various types of brackets—parentheses (), curly braces {}, and square brackets []—to define function calls, code blocks, and arrays.
+
+To prevent syntax errors, the editor needs to quickly check whether the brackets in the code snippet are properly matched and nested.
+
+You are given a line of code, and your task is: Determine whether the brackets in the line are correctly opened and closed in the proper order.
+
+Example:
+Input: "[function(x) { return [x + 1]; }]"
+Output: Valid - the brackets are correctly nested.
+
+Input: "if (x > 0) { arr[x] = (x + 2); }"
+Output: Invalid - mismatched ] and ).
+
+Function Signatures:
+Python
+def validate_brackets(code: str) -> bool:
+    # Your implementation here
+    pass
+
+Java
+public class BracketValidator {
+    public static boolean validateBrackets(String code) {
+        // Your implementation here
+        return false;
+    }
+}
+
+Javascript
+function validateBrackets(code) {
+    // Your implementation here
+    return false;
+}
+
+--------------------------------------------------------------------
+
+Question 2
+[2 marks]
+
+You're helping organize a conveyor belt system in a warehouse. The belt carries a fixed number of packages labeled in order, say [1, 2, 3, 4, 5, 6, 7], representing the order in which they were placed on the belt.
+
+Sometimes, due to operational needs, the entire belt needs to be rotated to the right by k positions. This means the last k packages move to the front, and the rest shift accordingly, maintaining their order.
+
+Your task is: Given the current order of packages on the belt and the number of steps k to rotate, determine the new order of the packages after the rotation.
+
+Example:
+Input: Packages = [1,2,3,4,5,6,7], Steps to rotate = 3
+Output: [5,6,7,1,2,3,4]
+Explanation: After 3 rotations to the right, the last 3 packages move to the front.
+
+Function Signatures:
+Python
+def rotate_packages(packages: list, k: int) -> list:
+    # Your implementation here
+    pass
+
+Java
+public class ConveyorBelt {
+    public static int[] rotatePackages(int[] packages, int k) {
+        // Your implementation here
+        return new int[0];
+    }
+}
+
+Javascript
+function rotatePackages(packages, k) {
+    // Your implementation here
+    return [];
+}
+
+--------------------------------------------------------------------
+
+Question 3
+[2 marks]
+
+You work for a sports analytics company that keeps track of athlete performances. After a big competition, you receive a list of scores from all the athletes.
+
+Your manager asks: "Can you tell me the athlete with the Nth highest score?"
+
+You are given: - A list of scores (higher is better). - A number n (like 1st, 2nd, or 3rd).
+
+Your task is to find the Nth highest score from the list.
+
+Examples:
+Input: Scores = [1,4,2,5,3], Rank wanted = 1
+Output: 5 (the highest score)
+
+Input: Scores = [1,4,2,5,3], Rank wanted = 2
+Output: 4 (the second-highest score)
+
+Function Signatures:
+Python
+def find_nth_highest_score(scores: list, n: int) -> int:
+    # Your implementation here
+    pass
+
+Java
+public class ScoreAnalyzer {
+    public static int findNthHighestScore(int[] scores, int n) {
+        // Your implementation here
+        return 0;
+    }
+}
+
+Javascript
+function findNthHighestScore(scores, n) {
+    // Your implementation here
+    return 0;
+}
+
+--------------------------------------------------------------------
+
+Question 4
+[5 marks]
+
+You are tasked with managing a space expedition team. The team consists of several explorers (heroes) and alien creatures (villains) on a distant planet. The explorers have a certain amount of energy, and the alien creatures have varying levels of strength.
+
+The exploration team is facing off against the alien creatures in a series of encounters, one-by-one. For each encounter:
+- If the energy of an explorer is greater than the strength of an alien, the alien is defeated, and the explorer's energy is reduced by the alien's strength.
+- If the explorer's energy is less than the alien's strength, the explorer loses and is no longer able to fight any further.
+- If the explorer's energy is equal to the alien's strength, both are defeated, and no further actions are taken.
+
+Your mission is to ensure that the expedition team can defeat all the aliens. However, some aliens at the beginning of the list may be too strong for the team to handle immediately, and you may need to remove some of them from the front to guarantee success.
+
+Your task is to find the minimum number of aliens to remove from the front of the list, such that the explorers can defeat all the remaining aliens in sequence.
+
+Input Format:
+- The first line contains an integer, N, denoting the number of alien creatures.
+- The second line contains an integer, M, denoting the number of explorers in the team.
+- The third line contains an integer, E, denoting the energy of each explorer.
+- The next N lines contain integers representing the strength of each alien.
+
+Output Format:
+Print a single integer, representing the minimum number of aliens to remove from the front, so that all remaining aliens can be defeated by the explorers.
+
+Constraints:
+- 1 ≤ N ≤ 200,000 (number of aliens)
+- 1 ≤ M ≤ 200,000 (number of explorers)
+- 1 ≤ E ≤ 1,000,000,000 (energy of each explorer)
+- 1 ≤ Strength of each alien ≤ 1,000,000,000
+
+Sample Input:
+4
+4
+3
+3
+1
+3
+3
+
+Sample Output:
+0
+
+Explanation:
+There are 4 alien creatures and 4 explorers, each with an energy of 3. The creatures have strengths [3, 1, 3, 3]. The explorers can defeat all the creatures in sequence without removing any. Therefore, the minimum number of aliens to remove is 0.
+
+Function Signatures:
+Python
+def min_aliens_to_remove(aliens: list, explorers: int, energy: int) -> int:
+    # Your implementation here
+    pass
+
+Java
+public class SpaceExpedition {
+    public static int minAliensToRemove(int[] aliens, int explorers, int energy) {
+        // Your implementation here
+        return 0;
+    }
+}
+
+Javascript
+function minAliensToRemove(aliens, explorers, energy) {
+    // Your implementation here
+    return 0;
+}
+
+--------------------------------------------------------------------
+
+Question 5
+[2 marks]
+
+You are working for a customer support company that handles incoming requests from clients. The company has a system in place where each support ticket has a unique ID represented by a string. Sometimes, these IDs can have repeated digits or letters.
+
+Your task is to find the first non-repeating character in the ticket ID and return its position (0 indexed) in the string. If no such character exists (meaning all characters are repeated), return -1.
+
+Example:
+Input: Ticket ID: "week"
+Output: The first non-repeating character is "w" at index 0. So, the output will be: 0
+
+Input/Output Explained:
+First Example:
+Ticket ID: "week"
+"w" is the first non-repeating character at index 0.
+Output: 0
+
+Second Example:
+Ticket ID: "aabbcc"
+There is no non-repeating character, so the output is: -1
+
+Function Signatures:
+Python
+def first_non_repeating_char(ticket_id: str) -> int:
+    # Your implementation here
+    pass
+
+Java
+public class TicketAnalyzer {
+    public static int firstNonRepeatingChar(String ticketId) {
+        // Your implementation here
+        return -1;
+    }
+}
+
+Javascript
+function firstNonRepeatingChar(ticketId) {
+    // Your implementation here
+    return -1;
+}
+
+--------------------------------------------------------------------
+
+Question 6
+[2 marks]
+
+Imagine you work for a library management system. The library has a collection of book IDs (a positive non zero number), but not all IDs are recorded correctly. Some books might have missing or duplicate IDs due to errors during the cataloging process.
+
+Your task is to find the smallest missing book ID that isn't in the catalog, which will help you identify missing books that should be added to the collection.
+
+Example:
+Cataloged Book IDs: [3, 4, 2, 7, 1]
+The smallest positive missing book ID is 5, since 1 to 4 is present but 5 is missing from the list.
+Output: 5
+
+Function Signatures:
+Python
+def find_smallest_missing_id(book_ids: list) -> int:
+    # Your implementation here
+    pass
+
+Java
+public class LibrarySystem {
+    public static int findSmallestMissingId(int[] bookIds) {
+        // Your implementation here
+        return 0;
+    }
+}
+
+Javascript
+function findSmallestMissingId(bookIds) {
+    // Your implementation here
+    return 0;
+}
+
+--------------------------------------------------------------------
+
+Question 7
+[5 marks]
+
+At an international airport, passengers are waiting in a line to board their flight. Most passengers board in the order they arrive (first in first out), but occasionally, VIPs or emergency passengers are allowed to board ahead of others.
+
+You are tasked with building a system to manage this boarding line efficiently. The system should support the following operations:
+- Add a passenger to the end of the line (normal boarding)
+- Add a passenger to the front of the line (priority boarding)
+- Remove the passenger from the front (simulate boarding the next passenger)
+
+Constraints: - 1≤Q≤10^4-Names are strings without spaces, up to 20 characters long.
+
+Example Input:
+ADD_NORMAL Alice
+ADD NORMAL Bob
+ADD PRIORITY Carol
+BOARD
+BOARD
+ADD_NORMAL Dave
+BOARD
+
+Example Output:
+Carol
+Alice
+Bob
+
+--------------------------------------------------------------------
+
+Question 8
+[5 marks]
+You're implementing a web browser.When users visit a page, it's pushed onto their history stack. They can also click "back," which removes the top page from the history and returns them to the previous page.
+You are tasked with building a system to manage browser navigation efficiently. The system should
+support the following operations: - Visit a new page (push a URL onto the history stack) - Navigate
+back (remove the most recently visited page) - Show the current page (view the top page on the stack)
+The program should support the following commands: - VISIT <url> — add a new URL to the
+history. - BACK - go back to the previous page (remove the last added page). - PEEK - return the
+page on the top of the history stack without removing it.
+Output Format: - For each PEEK command, print the current URL. - For each BACK command,
+print the name of the page that was removed. - If BACK or PEEK is called when the history is
+empty, print: No pages in history.
+
+Constraints: - URLs are strings without spaces, up to 50 characters long.
+
+Example Input:
+VISIT google.com
+VISIT facebook.com
+PEEK
+BACK
+PEEK
+VISIT twitter.com
+PEEK
+
+Example Output:
+facebook.com
+facebook.com
+google.com
+twitter.com
+
+--------------------------------------------------------------------
+
+Question 9
+[5 marks]
+
+You're building a playlist manager for a music streaming app. Each song a user adds to their playlist should play in the order it was added. Users can:
+- Add new songs to the end of the playlist.
+- Skip to the next song (move forward).
+- Remove a specific song by name.
+
+The playlist plays songs in either forward mode or circular mode, similar to a live party queue or autoplay system — users cannot go back to previously played songs.
+
+You are tasked with implementing a system that supports efficient playlist management.
+
+The program should support the following commands:
+- ADD <song> — Add a song to the end of the playlist.
+- REMOVE <song> — Remove a song by its name from the playlist.
+- PLAYLIST - Returns an array with songs in order.
+- SHUFFLE - Returns an array with songs in random order
+
+Output Format:
+For each REMOVE command:
+- If the song is found and removed, print: Removed <song>
+- If the song is not found, print: Song <song> not found
+- There is no output for the ADD command.
+
+Constraints:
+- 1 ≤ Q ≤ 10^4
+- Song names are strings without spaces, up to 100 characters long.
+
+Example Input:
+ADD ShapeOfYou
+ADD BlindingLights
+ADD Levitating
+ADD Peaches
+REMOVE BlindingLights
+REMOVE SomeoneYouLoved
+
+Example Output:
+Removed BlindingLights
+Song SomeoneYouLoved not found
+['ShapeOfYou', 'Levitating', 'Peaches']
+['Levitating', 'Peaches', 'ShapeOfYou']
+Removed Peaches
+['ShapeOfYou', 'Levitating']
+
+--------------------------------------------------------------------
+
+Question 10
+[10 marks]
+
+A defense contractor is deploying autonomous surveillance drones to monitor a square N×N city grid. Each drone can monitor:
+- The row it's in
+- The column it's in
+- The two diagonals passing through it
+
+To avoid signal interference, no two drones can monitor overlapping rows, columns, or diagonals. Design a function to place exactly N drones on the N×N grid so that none interfere with each other.
+
+The program should return all possible valid configurations of drone placements. Each configuration should be represented as a list of strings, where:
+- "." represents an empty cell
+- 'D' represents a drone
+
+Example Input:
+N = 4
+
+Example Output:
+[
+  ".D..",
+  "...D",
+  "D...",
+  "..D."
+]
+
+(Note: The actual output for N=4 would be multiple solutions, but the example in the PDF was truncated. The above is a representative solution.)
