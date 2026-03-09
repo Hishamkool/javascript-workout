@@ -24,3 +24,7 @@ const frequencyCounter = (words) => {
 };
 
 console.log(frequencyCounter(sampleArray));
+
+/* 
+
+*/

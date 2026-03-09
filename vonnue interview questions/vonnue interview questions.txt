@@ -448,10 +448,17 @@ N = 4
 
 Example Output:
 [
-  ".D..",
-  "...D",
-  "D...",
-  "..D."
-]
+    [
+        "-D--",
+        "---D",
+        "D---",
+        "--D-"
+    ],
+    [
+        "--D-",
+        "D---",
+        "---D",
+        "-D--"
+    ]
 
-(Note: The actual output for N=4 would be multiple solutions, but the example in the PDF was truncated. The above is a representative solution.)
+]
