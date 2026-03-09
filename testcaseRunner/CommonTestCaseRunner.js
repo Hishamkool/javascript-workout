@@ -1,6 +1,6 @@
 export function runTestCases(fn, testCases) {
+  console.log("\nsolution to ", fn.name, ":");
   let score = 0;
-
   testCases.forEach(({ input, expected }, index) => {
     const got = fn(...input);
 
@@ -8,7 +8,9 @@ export function runTestCases(fn, testCases) {
 
     if (passed) score++;
 
-    console.log(`Test ${index + 1}: ${passed ? "✅ Pass" : "❌ Fail"}`, input);
+    console.log(
+      `Test ${index + 1}: ${passed ? "✅ Pass" : "❌ Fail"} | input: ${JSON.stringify(input.map((item) => item).flat())} | got: ${JSON.stringify(got)} `,
+    );
 
     if (!passed) {
       console.log("Input:", input);
