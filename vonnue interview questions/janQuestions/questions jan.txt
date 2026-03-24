@@ -1,0 +1,84 @@
+================================================================================
+QUESTION 1
+================================================================================
+
+You are given an array A of length N. A segment [1, r] is called invisible if:
+
+max(A[1,...,r]) - min(A[1,...,r]) ≤ r - 1
+
+You may remove at most one invisible segment. After removal, the remaining elements join together. Return the maximum possible sum of the remaining array.
+
+Input: 31246
+Output: 13
+
+
+================================================================================
+QUESTION 2
+================================================================================
+
+You are given a binary string S. You process characters left to right, maintaining a counter starting at 0.
+
+Rules:
+- On reading '1': counter += 1
+- On reading '0': counter -= 1
+
+Counter must never become negative. You may flip at most one bit in the string.
+
+Return the maximum number of valid prefixes possible.
+
+Input: 01010
+Output: 5
+
+
+================================================================================
+QUESTION 3
+================================================================================
+
+You are given an N x M binary matrix.
+
+An operation:
+- Choose any row or column
+- Flip all bits in it (0 ←→ 1)
+
+Your goal is to make every row and every column contain an even number of 1s.
+
+Return:
+- YES if possible
+- NO otherwise
+
+Input: 10 10
+Output: YES
+
+
+================================================================================
+QUESTION 4
+================================================================================
+
+You are given an array H of length N, representing heights of buildings in a skyline. A skyline is called stable if for every index i (1 ≤ i ≤ N-2):
+
+|H[i-1] - H[i]| ≤ 1 OR |H[i+1] - H[i]| ≤ 1
+
+That is, every building (except the first and last) must be "supported" by at least one neighbor whose height differs by at most 1.
+
+You are allowed to remove any number of buildings (keeping the order of remaining ones).
+
+Your task is to compute the maximum number of buildings that can remain such that the resulting skyline is stable.
+
+Input: 5 3 6 2 5 4
+Output: 5
+
+
+================================================================================
+QUESTION 5 (From Page 3)
+================================================================================
+
+You are given an array A of length N (A[i] ≤ 2^20). An element A[i] is dominant if for all j ≠ i:
+
+(A[i] & A[j]) = A[i]
+
+You are given Q queries. Each query temporarily removes one index (0-based). For each query, return the number of dominant elements in the remaining array.
+
+Input: A = [7,3,1]
+Queries: remove index 2
+
+Output: (to be determined)

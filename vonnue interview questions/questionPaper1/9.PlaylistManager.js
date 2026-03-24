@@ -1,4 +1,4 @@
-import { runTestCases } from "../testcaseRunner/CommonTestCaseRunner.js";
+import { runTestCases } from "../../testcaseRunner/CommonTestCaseRunner.js";
 
 function playlistManager(arrOfOperations) {
   const printResult = [];
